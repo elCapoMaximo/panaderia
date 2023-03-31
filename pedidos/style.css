@@ -1,0 +1,16 @@
+
+body{
+    background-color: rgb(126,86,51);
+    color: white;
+    text-align: center;
+}
+
+#pedidos .texto{
+width: 50%;
+max-width: 600px;
+text-align: initial;
+padding-left: 30px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}

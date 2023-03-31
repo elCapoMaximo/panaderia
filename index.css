@@ -1,0 +1,308 @@
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding: 0;
+    font-family: lato;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'Roboto',sans-serif;
+    margin:0;
+}
+
+
+
+
+
+
+
+h1{font-size: 3.5em;}
+h2{font-size: 2.7em;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+ul{list-style: none}
+li{font-size: 1.25em;}
+
+button{
+    font-size: 1.25em;
+    font-weight:bold;
+    padding: 10px 20px;
+    border-radius:10px;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow:2px 2px 10px rgba(0,0,0,0.5);
+    color:rgb(245,245,245);
+    background-color: rgb(126,86,51 )
+    
+}
+.botoninfo{ 
+    text-decoration: none;
+    color: white;
+}
+
+#hero {
+    background-color: #fff;
+    color: aliceblue;
+}
+
+button:hover{
+    background-color: rgb(93, 3, 3)
+    
+
+}
+
+.container{
+    max-width: 1400px;
+    margin:auto;
+    
+}
+
+
+header{
+    background-color: rgb(126,86,51 )
+
+}
+
+header .logo{
+    margin:0;
+    padding: 20px 20px;
+    font-size: 35px;
+    padding-right: 0px;
+    color:rgb(253,251,244);
+    
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+    
+    
+}
+
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color:white
+
+}
+
+header a:hover{
+    color:rgb(34, 34, 34)
+    
+}
+
+
+
+#somos-pana .container{
+    text-align: center;
+    padding: 200px 12px;
+
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("png/ImagenPan1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+#hero h1{
+    color: white;
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+
+
+#nuestros-servicios{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#nuestros-servicios .container{
+    padding: 150px 12px;
+}
+
+#nuestros-servicios h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#nuestros-servicios p{
+    display: none;
+}
+
+#nuestros-servicios .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+
+
+#caracteristicas .container{
+   text-align: center;
+   padding: 100px 12px;
+}
+
+#caracteristicas li{
+    margin:16px 0px;
+    font-weight:bold;
+}
+
+#contacto{
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(126,86,51 );
+   color: white;
+   
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #somos-pana .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-pana .img-container{
+        background-image: url("png/quienesSomos.png");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 400px;      
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    #somos-pana.container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-pana .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #somos-pana h2{
+        margin-top: 0px;
+    }
+
+    #nuestros-servicios .servicios{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros-servicios p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #nuestros-servicios h2{
+        font-size: 4em;
+    }
+
+    #nuestros-servicios h3{
+        margin-top: 0;
+    }
+
+    #nuestros-servicios .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+    
+    #caracteristicas{
+        background-image: url("png/pedidosDomicilios.png");
+        background-repeat: no-repeat;
+        background-position: calc(100vw - 500px)50px ;
+        
+    }
+
+    #caracteristicas .container{
+        text-align: initial;
+    }
+
+    #caracteristicas ul{
+        margin-left: 100px;
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+  
+}
+
+ 
