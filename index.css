@@ -13,6 +13,12 @@ body{
     font-family: 'Roboto',sans-serif;
     margin:0;
 }
+#mensaje {
+    display: none;
+    color:white;
+    font-size: 18px;
+    margin-top: 10px;
+  }
 
 
 
@@ -188,7 +194,7 @@ header a:hover{
    justify-content: center;
    align-items: center;
    background-color: rgb(126,86,51 );
-   color: white;
+   color: black;
    
 }
 

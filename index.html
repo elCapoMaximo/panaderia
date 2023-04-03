@@ -20,7 +20,7 @@
                 <a href="#somos-pana">Quienes Somos</a>
                 <a href="#nuestros-servicios">Nuestro Servicios</a>
                 <a href="#contacto">Contacto</a>
-                <a href="inicio_sesion.html">Iniciar sesion</a>
+                <a href="inicio_sesion.html">Iniciar Sesion</a>
              </nav>
         </div>
     </header>   
@@ -93,14 +93,14 @@
                 <h3>PERSONALIZACIÓN</h3>
                 <br><br><br><br>
                 <button>
-                    <a href="personalizacion/personalizacion.html" class="botoninfo">+Info</a>
+                    <a href="personalizacion.html" class="botoninfo">+Info</a>
                 </button>
             </div>
             <div class="carta">
                 <h3>PEDIDOS A DOMICILIO</h3>
                 <br><br><br><br>
                 <button>
-                    <a href="pedidos/pedidos.html" class="botoninfo">+Info</a>
+                    <a href="pedidos.html" class="botoninfo">+Info</a>
                 </button>
             </div>
         </div>        
@@ -133,19 +133,18 @@
                     placeholder="Tu Mensaje(*)"></textarea>                   
                     <br>
                 </form>
-                <button>ENVIAR</button>
-            </div>      
+            </div>  
+            <button onclick="mostrarMensaje()">Enviar</button> 
+            <p id="mensaje"></p>
         </section>
-    
-
 
         <footer>
             <div class="container">
             <p>&copy;Panaderia <img src="png/LogoTrigo.png" alt="" width="70px"></p>
 
             </div>
-
         </footer>
+        <script src="index.js"></script>
 </body>
 
 </html>

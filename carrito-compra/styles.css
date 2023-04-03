@@ -12,9 +12,9 @@
 body{
     margin: 0 auto;
     max-width: 1200px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto',sans-serif;
     color: black;
-    background: linear-gradient(150deg, #F1BE1C ,#F1871C);
+    background-color: white;
 
 }
 
@@ -37,6 +37,7 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 30px 0 40px 0;
+    
 }
 
 .container-icon{
