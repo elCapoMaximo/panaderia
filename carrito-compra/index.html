@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" async></script>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <title>Tienda de Panaderia </title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Panadería <img src="../png/LogoTrigo.png" alt="#" class="trigo"></p>
+            <nav>
+               <a href="../index.html">Volver </a>
+               <a href="../contacto/index.html">Contacto</a>
+               <a href="../inicio_sesion/inicio_sesion.html">Iniciar Sesion</a>
+            </nav>
+       </div>
+    </header>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">Pan Hallulla</span>
+                <img src="../carrito-compra/img/pan_hallulla.png" alt="" class="img-item">
+                <span class="precio-item">$2.300 x kg</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Pan Baguette</span>
+                <img src="../carrito-compra/img/pan_baguette.jpg" alt="" class="img-item">
+                <span class="precio-item">$1500 x Un</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Pan Marraqueta</span>
+                <img src="../carrito-compra/img/pan marraqueta.jpg" alt="" class="img-item">
+                <span class="precio-item">$2100 x Un</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            
+            <div class="item">
+                <span class="titulo-item">Pan de Molde</span>
+                <img src="../carrito-compra/img/pan_molde.jpg" alt="" class="img-item">
+                <span class="precio-item">$2000 x Un</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Pan de Pascua</span>
+                <img src="../carrito-compra/img/pan_pascua.jpg" alt="" class="img-item">
+                <span class="precio-item">$4500 x Un</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Empanada de Pino</span>
+                <img src="../carrito-compra/img/empanada_pino.jpg" alt="" class="img-item">
+                <span class="precio-item">$2500 x Un</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items">
+                <!-- 
+                <div class="carrito-item">
+                    <img src="img/boxengasse.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Box Engasse</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$15.000,00</span>
+                    </div>
+                   <span class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </span>
+                </div>
+                <div class="carrito-item">
+                    <img src="img/skinglam.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Skin Glam</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="3" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$18.000,00</span>
+                    </div>
+                   <button class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </button>
+                </div>
+                 -->
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+    <section id="contacto">
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <div class="box">
+                        <h2>CONTACTO</h2>
+                        <p>Direccion: AV.Duoucuc</p> 
+                        <p>Telefono: + 12 748 494  </p>
+                        <p>Correo electronico: info@panaderia.com</p>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <h2>HORARIO</h2>
+                    <p>Lunes a Viernes: 8:00 - 19:00</p> 
+                    <p>Sábados: 8:00 - 17:00</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+                <div class="box">
+                    <h2>SIGUENOS</h2>
+                    <div class="red-social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2023 <b>Todos los derechos Reservados <img src="../png/LogoTrigo.png" alt="" width="50px"></b></small>
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+</body>
+</html>
+
+
+

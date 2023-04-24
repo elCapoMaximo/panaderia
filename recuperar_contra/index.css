@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: linear-gradient(150deg, #F1BE1C ,#F1871C);
+    height: 100vh;
+}
+
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 488px;
+    background: white;
+    border-radius: 10px;
+}
+
+.formulario h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.formulario form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.usuario{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.usuario input{
+    width: 100%;
+    padding: 0 5px;
+    height: 48px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.usuario label{
+    position: absolute;
+    top: -10%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.usuario input:focus ~ label,
+.usuario input:focus ~ label{
+    top: -5px;
+    color: #f3ca16;
+}
+
+.usuario input:focus ~ span::before,
+.usuario input:focus ~ span::before{
+    width: 100%;
+}
+
+.iniciar{
+    text-align: center;
+}
+
+.iniciar a{
+    background: #F1871C;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 40%;
+}
+
+
+.iniciar a:hover{
+    border-color: #f3ca16;
+    transition: .5s;
+}
+
+
+@media screen and (max-width: 600px) {
+    .formulario {
+    width: 90%;
+    margin-top: 50px;
+    }
+    .usuario label {
+    font-size: 15px;
+    }
+    .iniciar a {
+    font-size: 16px;
+    padding: 5px 30%;
+    }
+}
+    
