@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js" async></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>Tienda de Panaderia </title>
 </head>
 <body>
     <header>
         <div class="container">
-            <p class="logo">Panadería <img src="../png/LogoTrigo.png" alt="#" class="trigo"></p>
+            <p class="logo">Panadería y Pasteleria <img src="../png/LogoTrigo.png" alt="#" class="trigo"></p>
             <nav>
                <a href="../index.html">Volver </a>
                <a href="../contacto/index.html">Contacto</a>
@@ -23,45 +22,9 @@
     </header>
     <section class="contenedor">
         <!-- Contenedor de elementos -->
+  
         <div class="contenedor-items">
-            <div class="item">
-                <span class="titulo-item">Pan Hallulla</span>
-                <img src="../carrito-compra/img/pan_hallulla.png" alt="" class="img-item">
-                <span class="precio-item">$2.300 x kg</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Pan Baguette</span>
-                <img src="../carrito-compra/img/pan_baguette.jpg" alt="" class="img-item">
-                <span class="precio-item">$1500 x Un</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Pan Marraqueta</span>
-                <img src="../carrito-compra/img/pan marraqueta.jpg" alt="" class="img-item">
-                <span class="precio-item">$2100 x Un</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            
-            <div class="item">
-                <span class="titulo-item">Pan de Molde</span>
-                <img src="../carrito-compra/img/pan_molde.jpg" alt="" class="img-item">
-                <span class="precio-item">$2000 x Un</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Pan de Pascua</span>
-                <img src="../carrito-compra/img/pan_pascua.jpg" alt="" class="img-item">
-                <span class="precio-item">$4500 x Un</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            <div class="item">
-                <span class="titulo-item">Empanada de Pino</span>
-                <img src="../carrito-compra/img/empanada_pino.jpg" alt="" class="img-item">
-                <span class="precio-item">$2500 x Un</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div>
-            
+             <!-- agregar productos en: productos-panaderia.json -->
         </div>
         <!-- Carrito de Compras -->
         <div class="carrito" id="carrito">
@@ -110,7 +73,7 @@
                         $120.000
                     </span>
                 </div>
-                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+                <button href="../siguimiento-pedido/index.html" class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
             </div>
         </div>
     </section>
@@ -143,11 +106,14 @@
                 </div>
             </div>
             <div class="grupo-2">
-                <small>&copy; 2023 <b>Todos los derechos Reservados <img src="../png/LogoTrigo.png" alt="" width="50px"></b></small>
+                <small>&copy; 2023 <b>Todos los derechos Reservados <img src="../png/LogoTrigo.png" alt="" width="50"></b></small>
             </div>
         </footer>
     </section>
+    <div id="app"></div>
 
+    <script src="productos.js"></script>
+    <script src="index.js" async></script>
 
 
 

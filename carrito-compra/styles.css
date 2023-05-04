@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -101,7 +101,7 @@ header a:hover{
 }
 .contenedor .contenedor-items .item:hover{
     box-shadow: 0 0 10px #666;
-    scale: 1.05;
+    
 }
 .contenedor .contenedor-items .item .titulo-item{
     display: block;
@@ -253,7 +253,7 @@ header a:hover{
     transition: .3s;
 }
 .carrito-total .btn-pagar:hover{
-    scale: 1.05;
+   
     background-color: rgb(93, 3, 3);
 }
 

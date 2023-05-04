@@ -49,31 +49,30 @@ button{
     padding: 2px;
     text-align: center;
 }
-.botoninfo{ 
+
+
+.botoninfo {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    background-color: rgb(126, 86, 51);
+    text-align: center;
     text-decoration: none;
-    color: white;
-    position: relative;
-    color: white;
-    padding: 3%;
-    font-size: 100%;
-    border: none;
-    outline: 0px;
-    background:rgb(126,86,51);
-    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
-    height: 50px;
-    width: 100px;
-    top: 70px;
-}
-.info123{
-    position: relative;
-    top: 40px;
-}
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    width: 90px;
+    margin-right: 10px;
+  }
+  
 
 .botoninfo:hover{
-    background-color: rgb(93, 3, 3)
-    
+   
+    text-decoration: none;
+    color: rgb(93, 3, 3);
 }
 
 #hero {
@@ -394,3 +393,11 @@ header a:hover{
     }
 }
  
+
+.carac{
+    color:white
+}
+
+
+
+

@@ -1,0 +1,39 @@
+[
+    {
+        "nombre": "Pan Hallulla",
+        "precio": "$2.300 x kg",
+        "img": "img/pan_hallulla.png"
+
+    },
+    {
+        "nombre": "Pan Baguette",
+        "precio": "$1.500 x Un",
+        "img": "img/pan_baguette.jpg"
+
+    },
+    {
+        "nombre": "Pan Marraqueta",
+        "precio": "$2.100 x Un",
+        "img": "img/pan_marraqueta.jpg"
+
+    },
+    {
+        "nombre": "Pan Molde",
+        "precio": "$2.000 x Un",
+        "img": "img/pan_molde.jpg"
+
+    },
+    {
+        "nombre": "Empanada de Pino",
+        "precio": "$2.500 x Un",
+        "img": "img/empanada_pino.jpg"
+        
+
+    },
+    {
+        "nombre": "Pan de Pascua",
+        "precio": "$4.500 x Un",
+        "img": "img/pan_pascua.jpg" 
+
+    }
+]

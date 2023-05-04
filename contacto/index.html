@@ -5,9 +5,9 @@
     <title>Formulario de Contacto</title>
     <link rel="stylesheet" href="estilos.css">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <script src="../contacto/index.js" async></script>
 </head>
 <body>
+    
     <div class="container-form">
         <div class="info-form">
             <h2>Contáctanos</h2>
@@ -16,17 +16,19 @@
             <a href="#"><i class="fa fa-envelope"></i>  info@panaderia.com</a>
             <a href="#"><i class="fa fa-map-marked"></i> Viña del Mar, Chile</a>
         </div>
-        <form action="#" autocomplete="off">
+        <form id="formulario-contacto" action="#" autocomplete="off">
             <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
-            <input type="emal" name="email" placeholder="Tu Email" class="campo">
+            <span id="error-nombre" class="error"></span>
+            <input type="email" name="email" placeholder="Tu Email" class="campo">
+            <span id="error-email" class="error"></span>
             <textarea name="mensaje" placeholder="Tu Mensaje..."></textarea>
-            <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
-            <a href="../index.html"><input type="button" value="volver" class="btn-volver"></a>
+            <span id="error-mensaje" class="error"></span>
+            <button type="submit" name="enviar" class="btn-enviar">Enviar Mensaje</button>
+            <a href="../index.html" class="btn-volver">volver</a>
         </form>
     </div>
+
+    <script src="../contacto/index.js" async></script>
 </body>
 </html>
-
-
-
 

@@ -158,15 +158,18 @@ header a:hover{
     }
 
     #somos-proya .img-container{
-        background-image: url("../png/persona.png");
+        background-image: url("../png/panMolde.png");
         background-size: cover;
         background-position: center center;
         height: 500px;
-        width: 400px; 
+        width: 500px; 
     }
 
    
 }
+
+
+
 
 
 .pie-pagina{

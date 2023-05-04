@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
   $(".cod-form").submit(function(event) {
     event.preventDefault(); // previene el envío del formulario
 
@@ -13,12 +13,21 @@ $(document).ready(function() {
     } else {
       $("#error-correo").text("");
     }
+
     if (contrasenia.trim() == "" || confirmarContrasenia.trim() == "") {
-      $("#error-contrasenia").text("La contraseña no pueden estar vacías");
+      $("#error-contrasenia").text("Ambas contraseñas deben estar completas");
+      if (contrasenia != confirmarContrasenia) {
+        $("#error-confirmar-contrasenia").text("Las contraseñas no puede estar en Blanco");
+        return false;
+      } else {
+        $("#error-confirmar-contrasenia").text("");
+      }
+  
       return false;
     } else {
       $("#error-contrasenia").text("");
     }
+
     
     if (contrasenia != confirmarContrasenia) {
       $("#error-confirmar-contrasenia").text("Las contraseñas no coinciden");
@@ -27,9 +36,8 @@ $(document).ready(function() {
       $("#error-confirmar-contrasenia").text("");
     }
 
-    // Si llegamos aquí, todo está validado, se puede enviar el formulario
+    
     $(this).unbind("submit").submit();
-    window.location.href = "../index.html"; // redirige al usuario a la página de inicio
-
+    window.location.href = "../index.html";
   });
 });
