@@ -1,48 +1,47 @@
 const contenedorItems = document.querySelector('.contenedor-items');
 
-try{
-    fetch('productos-panaderia.json')
-    .then(respuesta =>{
-    return respuesta.json()
+try {
+  fetch('https://productos-panaderia-ea2c7-default-rtdb.firebaseio.com/.json')
+    .then(respuesta => {
+      if (!respuesta.ok) {
+        throw new Error('La petición no fue exitosa');
+      }
+      return respuesta.json();
     })
     .then(datos => {
-        let contador = 0;
-        while (datos.length > contador){
+      let contador = 0;
+      for (const key in datos) {
 
-            let producto = document.createElement('div')
-            let item = document.createElement('div')
-            let titulo = document.createElement('span')
-            let img = document.createElement('img')
-            let precio = document.createElement('span')
-            let botton = document.createElement('button')
+        let producto = document.createElement('div')
+        let item = document.createElement('div')
+        let titulo = document.createElement('span')
+        let img = document.createElement('img')
+        let precio = document.createElement('span')
+        let botton = document.createElement('button')
 
-            producto.setAttribute('class','contenedor-items')
+        producto.setAttribute('class', 'contenedor-items')
+        item.setAttribute('class', 'item')
+        titulo.setAttribute('class', 'titulo-item')
+        img.setAttribute('src', datos[key].img)
+        img.setAttribute('alt', '')
+        img.setAttribute('class', 'img-item')
+        precio.setAttribute('class', 'precio-item')
 
-            item.setAttribute('class','item')
+        titulo.innerHTML = datos[key].nombre;
+        precio.innerHTML = datos[key].precio;
 
-            titulo.setAttribute('class','titulo-item')
-            img.setAttribute('src',datos[contador].img)
-            img.setAttribute('alt','')
-            img.setAttribute('class','img-item')
-            precio.setAttribute('class','precio-item')
+        botton.setAttribute('class', 'boton-item')
+        botton.innerHTML = 'agregar al Carrito'
 
-            titulo.innerHTML = datos[contador].nombre;
-            precio.innerHTML = datos[contador].precio;
+        producto.appendChild(item)
+        item.appendChild(titulo)
+        item.appendChild(img)
+        item.appendChild(precio)
+        item.appendChild(botton)
+        contenedorItems.appendChild(producto)
 
-            botton.setAttribute('class','boton-item')
-            botton.innerHTML = 'agregar al Carrito'
-            
-            producto.appendChild(item)
-            item.appendChild(titulo)
-            item.appendChild(img)
-            item.appendChild(precio)
-            item.appendChild(botton)
-            contenedorItems.appendChild(producto)
-
-
-            
-            contador++;
-        }
+        contador++;
+      }
 
         //Variable que mantiene el estado visible del carrito
         var carritoVisible = false;
@@ -244,9 +243,8 @@ try{
 
         }
         
-    })
-        
-} catch (e){
-    console.log(e);
+    });
+} catch (error) {
+  console.log(error);
 }
 
