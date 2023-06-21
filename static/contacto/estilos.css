@@ -1,0 +1,138 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+  }
+  
+  /* Estilos del contenedor del formulario */
+  .container-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /*Centrar todo el contenido horizontalmente*/
+    align-items: center; /*Centrar todo el contenido verticalmente*/
+  }
+  
+  .info-form {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  
+  .info-form h2 {
+    margin-top: 0;
+    font-size: 36px;
+  }
+  
+  .info-form p {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  .info-form a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .info-form a:hover {
+    color: #333;
+  }
+  
+  /* Estilos del formulario */
+  #formulario-contacto {
+    flex-basis: calc(50% - 20px);
+  }
+  
+  .campo {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .campo:focus {
+    outline: none;
+    border: 1px solid #7b99ff;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  textarea:focus {
+    outline: none;
+    border: 1px solid #7b99ff;
+  }
+  
+  .error {
+    display: block;
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .btn-enviar {
+    background-color: rgb(126,86,51);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .btn-enviar:hover {
+    background-color: rgb(93, 3, 3)
+  }
+  
+  .btn-volver {
+    display: block;
+    margin-top: 20px;
+    background-color: rgb(126,86,51);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-volver:hover {
+    background-color: rgb(93, 3, 3)
+  }
+  
+@media (max-width: 768px) {
+    
+    .container-form {
+      padding: 20px;
+    }
+  
+    
+    #formulario-contacto {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+}
+  

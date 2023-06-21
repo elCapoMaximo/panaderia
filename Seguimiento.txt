@@ -1,0 +1,102 @@
+
+///Crear el proyecto
+django-adminstart project DeliciasMau
+
+//creo carpeta de app 
+md Tienda
+//Configuro el inicio de la app
+django-admin startapp Mau
+
+//IR A DELICIASMAU sttings
+agregar el proyecto Tienda.Mau
+
+//Editar BDD
+'NAME': BASE_DIR / 'Maullin.db',
+
+
+//Me dirijo a Tienda/Models 
+class Producto(models.Model):
+    codigo = models.CharField(primary_key=True, max_length=6)
+    nombre = models.CharField(max_length=50)
+
+//Me dirijo a Tienda/admin
+from .models import Producto
+
+admin.site.register(Producto)
+
+//Pruebo la migracion 
+python manage.py migrate
+
+// hago la migracion
+  python manage.py makemigrations
+
+//Creo el admin
+python manage.py createsuperuser
+
+
+//Dentro de la carpeta app
+    crear carpeta templates->app y en esta dejar el index
+
+//ir al archivo views.py
+agregar cada pagina 
+
+def home (request):
+    return render(request, 'app/index.html')    
+
+//En el archivo url principal agregar esto
+
+    path ('',include('app.urls') )
+
+//crear archivo urls.py en la carpeta app
+    urlpatterns = [
+    path('', home, name="home"),
+    path('carrito/',carrito, name ="categoria" ),
+    path('categoria/',categoria, name ="categoria" ),
+    path('info_producto/',info_producto, name ="info_producto" ),
+    path('login/',login, name ="login" ),
+    path('registrar/',registrar, name ="registrar" ),
+    path('contacto/',contacto, name ="contacto" ),
+   
+]
+
+
+//En la carpeta raiz se crea la carpeta static
+    dentro de esta tendremos todos los archivos necesarios
+    para cada pagina.
+
+//Agregando la carpeta static a settings (se agrega como tupla)
+STATICFILES_DIRS =(os.path.join(BASE_DIR,'static'),)
+
+
+//se modifican las rutas de css y de imagenes llamadas
+    desde el html
+../../../../static/index/css/style.css
+
+//En cada index se cambia el href segun el nombre de pagina
+    a la que se quiera acceder , ejemplo:
+    href="login/"
+
+    OJO PARA LINKEAR DESDE OTRA WEB es:
+        href="{% url 'home'%}"
+
+//
+//CAMBIAR CATEGORIA Css
+nav ul  {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    font-size: 1rem;
+    color: #cc1d1d;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    
+}
+
+
+nav ul a{
+
+    color: #000;
+}
