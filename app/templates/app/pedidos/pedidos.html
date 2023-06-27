@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="{% static 'pedidos/Pedidos.css'%}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Pedidos a Domicilios <img src="{%static 'imagenes/LogoTrigo.png'%}"alt="#" class="trigo"></p>
+            <nav>
+                <a href="{%url 'home'%}#nuestros-servicios">Volver </a>
+                <a href="{%url 'contacto'%}">Contacto</a>
+                {% if user.is_authenticated %}
+                <li>
+                <a href="{% url 'logout'%}">Cerrar Sesion</a>
+                </li>
+
+                <li class="user">
+                <a href="#">{{ user.username}}</a>
+            </li>
+            {% else %}
+                <li>
+                <a href="{%url 'login'%}">Iniciar Sesion</a>
+                </li>
+            {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <section id="somos-proya">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2>Pedidos a <span class="color-acento">Domicilio</span></h2>
+                <p>Ofrecemos pedido a domicilio LLamando al + 12 748 494  Lunes a Viernes de 8:00-19:00,y Sabados de 8:00-17:00, Es una excelente opción para aquellos que buscan 
+                    comodidad, variedad, calidad, personalización y ahorro de tiempo. Si quieres disfrutar de 
+                    productos frescos y deliciosos sin tener que salir de casa, pedir a domicilio es la mejor opción para ti.En resumen, ofrecer un servicio de entrega a 
+                    domicilio para una panadería web puede ser una excelente manera de mejorar la experiencia del cliente, aumentar la visibilidad y el alcance del negocio, 
+                    y generar un flujo de ingresos adicional. En un mundo cada vez más digital 
+                    y conectado, esta puede ser una oportunidad clave para diferenciarse de la competencia y crecer en el mercado.
+
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contacto">
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <div class="box">
+                        <h2>CONTACTO</h2>
+                        <p>Direccion: AV.Duoucuc</p> 
+                        <p>Telefono: + 12 748 494  </p>
+                        <p>Correo electronico: info@panaderia.com</p>
+                    </div>
+                </div>
+                
+                <div class="box">
+                    <h2>HORARIO</h2>
+                    <p>Lunes a Viernes: 8:00 - 19:00</p> 
+                    <p>Sábados: 8:00 - 17:00</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+                <div class="box">
+                    <h2>UBICANOS</h2>
+                    <div class="red-social">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.8650364773125!2d-71.53500484562804!3d-33.03
+                        3686006731884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689de64d74fd4af%3A0x8004f381e9055a38!2sDuoc%20UC%
+                        3A%20Sede%20Vi%C3%B1a%20Del%20Mar!5e0!3m2!1ses-419!2scl!4v1682429654494!5m2!1ses-419!2scl" width="600" height="350" 
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2023 <b>Todos los derechos Reservados<img src="{%static 'imagenes/LogoTrigo.png'%}" alt="" width="50px"></b></small>
+            </div>
+        </footer>
+    </section>
+ 
+
+ 
+
+   
+</body>
+</html>

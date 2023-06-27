@@ -1,0 +1,114 @@
+/* login.css */
+
+/* Estilos generales */
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .logo-tac {
+    background-image: url("ruta-de-la-imagen-del-logo.png");
+    width: 200px;
+    height: 100px;
+    margin: 20px auto;
+  }
+  
+  .login {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .login h1 {
+    color: #dd573c;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group label {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .form-check-label {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .btn-success {
+    background-color: #dd573c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  
+  .btn-success:hover {
+    background-color: #c45230;
+  }
+  
+  /* Estilos específicos de panadería */
+  body {
+    background: linear-gradient(45deg, #FDB927 0%, #DD573C 100%);
+  }
+  
+  .logo-tac {
+    background-image: url("ruta-de-la-imagen-del-logo-de-la-panaderia.png");
+  }
+  
+  .login {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .login h1 {
+    color: #dd573c;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .btn-success {
+    background-color: #dd573c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  
+  .btn-success:hover {
+    background-color: #c45230;
+  }
+  

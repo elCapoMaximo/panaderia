@@ -1,0 +1,56 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio sesion</title>
+    <link rel="stylesheet" href="{%static 'login/login.css'%}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{%static 'login/inicio_sesion.js'%}"></script>
+</head>
+<body>
+    <div class="cod-container">
+        <div class="form-header">
+            <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="Logotrigo">
+            <h1>Pana<span>deria</span></h1>
+        </div>
+
+        <div class="form-content">
+            <form action="#" class="cod-form" id="login-form">
+                <div class="form-title">
+                    <h3>Iniciar Sesión</h3>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" class="form-input" name="form-input" id="correo">
+                    <label class="label" for="correo">Correo</label>
+                    <p class="error" id="error-correo"></p>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" class="form-input" name="form-input" id="pass">
+                    <label class="label" for="pass">Contraseña</label>
+                    <p class="error" id="error-pass"></p>
+                </div>
+
+                <div class="input-group">
+                    <input type="submit"  class="form-input" value="Iniciar" >
+                    <p>No tienes cuenta? <a href="{%url 'Registrarse'%}" class="alt-form">Ingresa aquí</a></p>
+                </div>
+
+                <script>
+                    window.homeUrl = "{% url 'home' %}";
+                </script>
+                  
+               
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+        

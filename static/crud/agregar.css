@@ -1,0 +1,153 @@
+/* Estilos para el formulario */
+.card {
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .card form {
+    margin-top: 20px;
+  }
+  
+  .card form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .card form label {
+    font-weight: bold;
+  }
+
+  .card form label[for=id_nombre] {
+    position: relative;
+    top: 30px;
+    right: 240px;
+  }
+
+  .card form label[for=id_precio] {
+    position: relative;
+    top: 30px;
+    right: 80.5%;
+  }
+
+  .card form label[for=id_descripcion] {
+    position: relative;
+    top: 30px;
+    right: 80.5%;
+  }
+
+  .card form label[for=id_imagen] {
+    position: relative;
+    top: 25px;
+    background-color: #ffffff;
+  }
+  
+  .card form input[type="text"],
+  .card form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input#id_nombre {
+    position: relative;
+    left: 65px;
+    width: 80%;
+    
+}
+
+input#id_codigo {
+  position: relative;
+  left: 10px;
+}
+
+input#id_precio {
+  position: relative;
+  top: -20%;
+  left: 65px;
+  width: 80%;
+}
+
+textarea#id_descripcion {
+  position: relative;
+  top: 30px;
+  border: 1px solid #ccc;
+  width: 93%;
+  height: 100px;
+}
+
+input#id_imagen {
+  position: relative;
+  left: 60px;
+}
+
+.d-flex.justify-content-end {
+  position: relative;
+  top: 10px;
+  left: 60%;
+}
+
+  .card form input[type="reset"],
+  .card form input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .card form input[type="reset"] {
+    background-color: #f0f0f0;
+    border: none;
+  }
+  
+  .card form input[type="submit"] {
+    background-color: rgb(126,86,51);
+    border: none;
+    
+  }
+  
+  
+  .card form input[type="reset"]:hover,
+  .card form input[type="submit"]:hover {
+    
+    background-color: rgb(93, 3, 3);
+    
+  }
+  
+  /* Estilos para el contenedor principal */
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+  }
+  
+#id_codigo input {
+    position: relative;
+    top: -100px;
+  }
+
+  a {
+    position: relative;
+    top: 25px;
+    left: -60px;
+}
+
+a.btn.btn-info {
+  top: 0;
+  left: 0px;
+}
+
+a.btn.btn-danger {
+  top: 0;
+  left: 0;
+}
