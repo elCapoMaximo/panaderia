@@ -3,11 +3,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 from django.contrib import messages
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
 
 
 def base (request):
     return render(request, 'app/base/base.html')
+
 def home (request):
     return render(request, 'app/index/index.html')
 
@@ -18,7 +20,14 @@ def contacto (request):
     return render(request, 'app/contacto/index.html')
 
 def carritocompra (request):
-    return render(request, 'app/carritocompra/index.html')
+    
+    productos = Pan.objects.all()
+    data ={
+        'pan':productos
+        
+    }
+    
+    return render(request, 'app/carritocompra/index.html',data)
 
 def Registrarse (request):
     return render(request, 'app/Registrarse/registro.html')
@@ -37,6 +46,7 @@ def personalizacion (request):
 def seguimiento (request):
     return render
 
+@permission_required('app.add_pan')
 def agregar_producto(request):
 
     data ={
@@ -54,28 +64,21 @@ def agregar_producto(request):
 
     return render(request, 'app/crud/agregar.html',data)
 
-
+@permission_required('app.view_pan')
 def listar_producto(request):
 
-    cproductos = Pan.objects.all()
+    productos = Pan.objects.all()
     data ={
-        'pan':cproductos
+        'pan':productos
         
     }
-
- 
     return render(request, 'app/crud/listar.html',data)
 
-
-
+@permission_required('app.change_pan')
 def modificar_producto(request, id):
-
- 
         mproducto = get_object_or_404(Pan, codigo=id)
-
         data = {
                 'form': PanForm(instance=mproducto)
-
             }
 
         if request.method =='POST':
@@ -90,7 +93,7 @@ def modificar_producto(request, id):
  
         return render(request, 'app/crud/modificar.html',data)
 
-
+@permission_required('app.delete_producto')
 def eliminar_producto(request,id):
     eproducto = get_object_or_404(Pan, codigo=id)
     eproducto.delete()

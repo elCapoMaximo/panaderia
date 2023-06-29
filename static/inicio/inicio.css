@@ -72,11 +72,6 @@ body {
     background-color: #c45230;
   }
   
-  /* Estilos específicos de panadería */
-  body {
-    background: linear-gradient(45deg, #FDB927 0%, #DD573C 100%);
-  }
-  
   .logo-tac {
     background-image: url("ruta-de-la-imagen-del-logo-de-la-panaderia.png");
   }

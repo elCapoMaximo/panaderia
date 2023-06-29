@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: rgb(126,86,51);
+    background-color: #7E5633 !important;
+    background: #7E5633 !important;
     width: 100%;
     height: 100vh;
     /* color: #fff; */
@@ -17,10 +18,22 @@ body {
 }
 
 .cod-container {
+    width: 380px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cod-container {
     background: #fff;
     width: 380px;
     border-radius: 10px;
     overflow: hidden;
+}
+
+form.needs-validation {
+    transform: scale(0.92);
+    position: relative;
+    top: -50px;
 }
 
 .form-header {
@@ -153,6 +166,11 @@ input[type="submit"] {
     transition: all .5s ease;
 }
 
+input.btn.btn-success {
+    top: 20px;
+    position: relative;
+}
+
 input[type="submit"]:hover {
     background: #021E26;
 }
@@ -179,4 +197,8 @@ input[type="submit"]:hover {
 
 .form-content:nth-child(2) {
     display: block;
+}
+
+a.home {
+    text-decoration: none;
 }

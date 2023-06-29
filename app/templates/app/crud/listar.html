@@ -22,19 +22,11 @@
             }
 
         })
-
     }
 </script>
 
-
 {% endblock %}
 {% block contenido%}
-
-
-
-
-
-
 
 <div class="card">
     <div class="card body">
@@ -47,9 +39,12 @@
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>descripcion</th>
-                <th>Opciones</th>
+                <th>Descripcion</th>
+                <th>imagen</th>
 
+                {% if perms.app.change_pan or perms.app.delete_pan %}
+                <th>opciones</th>
+                {% endif %}
 
             </tr>
         
@@ -60,35 +55,24 @@
                 <td>{{p.nombre }}</td>
                 <td>{{p.precio}}</td>
                 <td>{{p.descripcion}}</td>
+                <td>{{p.imagen}}</td>
 
                 <td>
+
+                    {% if perms.app.change_pan %}
                     <a href="{%url 'modificar_producto' p.codigo%}" class="btn btn-info">Modificar</a>
+                    {% endif %}
                     
-
+                    {% if perms.app.delete_pan %}
                     <a href="{%url 'eliminar_producto' p.codigo%}" class="btn btn-danger">Eliminar</a>
-
+                    {% endif %}
                 </td>
-        
             </tr>
         
-                
-                
-               
-                
-        
-        
             {% endfor %}
-        </table>
-        
 
+        </table>
     </div>
 </div>
-
-
-
-
-
-
-
 
 {% endblock %}

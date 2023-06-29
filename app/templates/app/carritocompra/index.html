@@ -1,4 +1,5 @@
-{%load static%}
+{% load static %}
+{% load humanize %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'carritocompra/styles.css'%}">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>Tienda de Panaderia </title>
@@ -14,35 +15,54 @@
 <body>
     <header>
         <div class="container">
-            <p class="logo">Panadería y Pasteleria <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="#" class="trigo"></p>
+            <p class="logo">Panadería <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="#" class="trigo"></p>
             <nav>
-               <a href="{%url 'listar_producto'%}">Lista de productos </a>
-               <a href="{%url 'agregar_producto'%}">Agregar producto </a>
-               <a href="{%url 'home'%}">Volver </a>
-               <a href="{%url 'contacto'%}">Contacto</a>
-               
-               {% if user.is_authenticated %}
-               <li>
-               <a href="{% url 'logout'%}">Cerrar Sesion</a>
-               </li>
-
-               <li class="user">
-               <a href="#">{{ user.username}}</a>
-           </li>
-           {% else %}
-               <li>
-               <a href="{%url 'login'%}">Iniciar Sesion</a>
-               </li>
+                {% if perms.app.add_pan %}
+                <a href="{%url 'agregar_producto'%}">Agregar Panes </a>
            {% endif %}
+
+              {% if perms.app.view_pan %}
+               <a href="{%url 'listar_producto'%}">Lista de panes</a> 
+           {% endif %}
+
+          <a href="{%url 'home'%}">Volver </a>
+          <a href="{%url 'contacto'%}">Contacto</a>
+          
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout'%}">Cerrar Sesion</a>
+          {% else %}
+          <a href="{%url 'login'%}">Iniciar Sesion</a>
+      {% endif %}
 
             </nav>
        </div>
     </header>
     <section class="contenedor">
         <!-- Contenedor de elementos -->
-  
         <div class="contenedor-items">
-             <!-- agregar productos en: productos-panaderia.json -->
+
+            {% for p in pan %}
+
+            <div class="item">
+                <span class="titulo-item">{{ p.nombre }}</span>
+                <img src="{{ p.imagen.url }}" alt="" class="img-item">
+                <span class="precio-item">${{ p.precio }} {{ p.descripcion }}</span>
+                <button class="boton-item">Agregar al Carrito</button>
+                <td>
+                    <div class="btns">
+                        {% if perms.app.change_pan %}
+                        <a href="{%url 'modificar_producto' p.codigo%}" class="btn btn-info">Modificar</a>
+                        {% endif %}
+                        
+                        {% if perms.app.delete_pan %}
+                        <a href="{%url 'eliminar_producto' p.codigo%}" class="btn btn-danger">Eliminar</a>
+                        {% endif %}
+                    </div>
+                </td>
+            </div>
+
+            {% endfor %}
+
         </div>
         <!-- Carrito de Compras -->
         <div class="carrito" id="carrito">
@@ -91,7 +111,7 @@
                         $120.000
                     </span>
                 </div>
-                <button href="../siguimiento-pedido/index.html" class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
             </div>
         </div>
     </section>
@@ -124,20 +144,12 @@
                 </div>
             </div>
             <div class="grupo-2">
-                <small>&copy; 2023 <b>Todos los derechos Reservados <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="" width="50"></b></small>
+                <small>&copy; 2023 <b>Todos los derechos Reservados <img src="../png/LogoTrigo.png" alt="" width="50px"></b></small>
             </div>
         </footer>
     </section>
-    <div id="app"></div>
-
     <script src="{%static 'carritocompra/productos.js'%}"></script>
-
-
-
-
-
 </body>
 </html>
-
 
 

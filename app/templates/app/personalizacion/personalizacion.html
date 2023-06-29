@@ -12,17 +12,15 @@
             <nav>
                 <a href="{%url 'home'%}#nuestros-servicios">Volver </a>
                 <a href="{%url 'contacto'%}">Contacto</a>
+
                 {% if user.is_authenticated %}
                 <li>
                 <a href="{% url 'logout'%}">Cerrar Sesion</a>
                 </li>
 
-                <li class="user">
-                <a href="#">{{ user.username}}</a>
-            </li>
-            {% else %}
+                {% else %}
                 <li>
-                <a href="{%url 'login'%}">Iniciar Sesion</a>
+                    <a href="{%url 'login'%}">Iniciar Sesion</a>
                 </li>
             {% endif %}
             </nav>

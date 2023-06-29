@@ -1,47 +1,7 @@
-const contenedorItems = document.querySelector('.contenedor-items');
 
-try {
-  fetch('https://panadera-pro-default-rtdb.firebaseio.com/.json')
-    .then(respuesta => {
-      if (!respuesta.ok) {
-        throw new Error('La petición no fue exitosa');
-      }
-      return respuesta.json();
-    })
-    .then(datos => {
-      let contador = 0;
-      for (const key in datos) {
 
-        let producto = document.createElement('div')
-        let item = document.createElement('div')
-        let titulo = document.createElement('span')
-        let img = document.createElement('img')
-        let precio = document.createElement('span')
-        let botton = document.createElement('button')
 
-        producto.setAttribute('class', 'contenedor-items')
-        item.setAttribute('class', 'item')
-        titulo.setAttribute('class', 'titulo-item')
-        img.setAttribute('src', datos[key].img)
-        img.setAttribute('alt', '')
-        img.setAttribute('class', 'img-item')
-        precio.setAttribute('class', 'precio-item')
-
-        titulo.innerHTML = datos[key].nombre;
-        precio.innerHTML = datos[key].precio;
-
-        botton.setAttribute('class', 'boton-item')
-        botton.innerHTML = 'Agregar al Carrito'
-
-        producto.appendChild(item)
-        item.appendChild(titulo)
-        item.appendChild(img)
-        item.appendChild(precio)
-        item.appendChild(botton)
-        contenedorItems.appendChild(producto)
-
-        contador++;
-
+  
         //Variable que mantiene el estado visible del carrito
         var carritoVisible = false;
 
@@ -240,10 +200,6 @@ try {
 
             document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es");
             }
-        }
         
-    });
-} catch (error) {
-  console.log(error);
-}
+        
 
