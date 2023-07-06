@@ -30,6 +30,7 @@
           
           {% if user.is_authenticated %}
           <a href="{% url 'logout'%}">Cerrar Sesion</a>
+          <a class="btn-cerrar-login" href="#">@{{ user.username }}</a>
           {% else %}
           <a href="{%url 'login'%}">Iniciar Sesion</a>
       {% endif %}
@@ -37,7 +38,55 @@
             </nav>
        </div>
     </header>
+
+
+    <form method="GET" action="{% url 'buscar_producto' %}">
+        <input class="buscador" type="text" name="query" placeholder="Buscar por nombre">
+        <button class="btn-buscador" type="submit">Buscar</button>
+    </form>
+
+    {% if query %}
+        <br>
+        <h2 class="titulo-bus" >Resultados de la búsqueda para "{{ query }}":</h2>
+        {% if productos  %}
+
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'carritocompra/styles.css'%}">
+            {% for productos in productos %}
+
+            <section class="contenedor-buscar">
+                <div class="contenedor-items-buscar">
+                
+                    <div class="item-buscar">
+                        <span class="titulo-item-buscar">{{ productos.nombre }}</span>
+                        <img src="{{ productos.imagen.url }}" alt="" class="img-item-buscar">
+                        <span class="precio-item-buscar">${{ productos.precio }} {{ productos.descripcion }}</span>
+                        <button class="boton-item-buscar">Agregar al Carrito</button>
+                        <td>
+                            <div class="btns">
+                                {% if perms.app.change_pan %}
+                                <a href="{%url 'modificar_producto' productos.codigo%}" class="btn btn-info">Modificar</a>
+                                {% endif %}
+                                
+                                {% if perms.app.delete_pan %}
+                                <a href="{%url 'eliminar_producto' productos.codigo%}" class="btn btn-danger">Eliminar</a>
+                                {% endif %}
+                            </div>
+                        </td>
+                    </div>
+                </div>
+                
+            </section>
+        {% endfor %}
+        {% else %}
+            <p>No se encontraron productos.</p>
+        {% endif %}
+        
+    {% endif %}
+
+
     <section class="contenedor">
+
         <!-- Contenedor de elementos -->
         <div class="contenedor-items">
 

@@ -6,7 +6,15 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+img.img-modificar {
+    left: 100px;
+    position: relative;
+    width: 100px;
+}
 
+img.img-listar {
+    width: 85px;
+}
 
 html{
     scroll-behavior: smooth;
@@ -108,7 +116,7 @@ header .logo{
 
 p.logo {
     position: relative;
-    left: -200px;
+    left: -100px;
 }
 
 header .container{
@@ -130,35 +138,47 @@ header nav{
 }
 
 
+nav {
+    left:  -50px;
+    position: relative;
+}
+
 header a{
     padding: 5px 12px;
     text-decoration: none;
     font-weight: bold;
     color:white;
+    background-color: rgb(126,86,51);
 
+}
+
+a.user {
+    position: relative;
+    top: 0;
+    left: 180px;
 }
 
 a.btn-listar {
     position: relative;
-    left: 200px;
+    left: 190px;
     top: 0px;
 }
 
 a.btn-agregar {
     position: relative;
-    left: 200px;
+    left: 190px;
     top: 0px;
 }
 
 a.btn-Volver {
     position: relative;
-    left: 200px;
+    left: 190px;
     top: 0;
 }
 
 a.btn-cerrar-login {
     position: relative;
-    left: 200px;
+    left: 190px;
     top: 0px;
 }
 

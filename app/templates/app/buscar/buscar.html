@@ -1,0 +1,35 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'carritocompra/styles.css'%}">
+
+{% if query %}
+        
+        <h2>Resultados de la búsqueda para "{{ query }}":</h2>
+        {% if productos  %}
+
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'buscar/buscar.css'%}">
+            <div class="contenedor-items">
+            {% for productos in productos %}
+                <div class="item">
+                    <span class="titulo-item">{{ productos.nombre }}</span>
+                    <img src="{{ productos.imagen.url }}" alt="" class="img-item">
+                    <span class="precio-item">${{ productos.precio }} {{ productos.descripcion }}</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                    <td>
+                        <div class="btns">
+                            {% if perms.app.change_pan %}
+                            <a href="{%url 'modificar_producto' productos.codigo%}" class="btn btn-info">Modificar</a>
+                            {% endif %}
+                            
+                            {% if perms.app.delete_pan %}
+                            <a href="{%url 'eliminar_producto' productos.codigo%}" class="btn btn-danger">Eliminar</a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No se encontraron productos.</p>
+        {% endif %}
+    {% endif %}

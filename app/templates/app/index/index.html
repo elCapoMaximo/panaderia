@@ -26,6 +26,7 @@
 
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout'%}">Cerrar Sesion</a>
+                    <a href="#">@{{ user.username }}</a>
                 {% else %}
                     <a href="{%url 'login'%}">Iniciar Sesion</a>
                 {% endif %}

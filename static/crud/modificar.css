@@ -1,5 +1,61 @@
+input#id_imagen {
+    position: relative;
+    top: -20px;
+    left: 0;
+}
+
+input#id_descripcion{
+    position: relative;
+}
+
+input#id_descripcion {
+    position: relative;
+    width: 81.5%;
+    left: -0.5%;
+    top: 3px;
+}
+
+.card form label[for=id_imagen] {
+    position: relative;
+    left: -450px;
+    top: 25px;
+    background-color: #ffffff;
+}
+
+.card form label[for=id_imagen] {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+}
+
+input#id_nombre {
+    position: relative;
+    left: 65px;
+    width: 85%;
+}
+
+.card form label[for=id_precio] {
+    position: relative;
+    top: 30px;
+    right: 85.4%;
+}
+
+input#id_precio {
+    position: relative;
+    top: -20%;
+    left: 65px;
+    width: 85%;
+}
+
+.card form label[for=id_descripcion] {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
 a {
     position: relative;
-    top: 25px;
-    left: -60px;
+    left: -65px;
+    background-color: #f2f2f2;
 }

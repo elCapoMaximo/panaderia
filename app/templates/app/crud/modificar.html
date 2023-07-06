@@ -15,19 +15,14 @@
 
                 {% csrf_token%}
 
-                {{form }}
+                {{ form}}
+    
 
                 <div class="d-flex justify-content-end">
 
                     <button type="reset" value="Cancelar" class="btn btn-secondary" onclick="goBack()">Cancelar</button>
                     &nbsp;
                     <button type="submit" value="Editar" class="btn btn-primary" onclick="goBack()">Modificar</button>
-
-                    <script>
-                        function goBack() {
-                          window.history.back();
-                        }
-                    </script>
 
                 </div>
             </form>

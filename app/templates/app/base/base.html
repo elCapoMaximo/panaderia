@@ -20,17 +20,19 @@
         <div class="container">
              <p class="logo">Panadería <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="#" class="trigo"></p>
              <nav>
-                {% if perms.app.view_producto %}
+                {% if perms.app.view_pan %}
                     <a class="btn-listar"href="{%url 'listar_producto'%}">Lista de panes</a> 
                 {% endif %}
                 
-                {% if perms.app.add_producto %}
+                {% if perms.app.add_pan %}
                     <a class="btn-agregar" href="{%url 'agregar_producto'%}">Agregar panes </a>
                 {% endif %}
+
                     <a class="btn-Volver" href="{%url 'carritocompra'%}">Volver </a>
 
                 {% if user.is_authenticated %}
                     <a class="btn-cerrar-login" href="{% url 'logout'%}">Cerrar Sesion</a>
+                    <a class="user" href="#">@{{ user.username }}</a>
                 {% else %}
                     <a class="btn-login" href="{%url 'login'%}">Iniciar Sesion</a>
                 {% endif %}

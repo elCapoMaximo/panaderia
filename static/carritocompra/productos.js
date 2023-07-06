@@ -1,7 +1,3 @@
-
-
-
-  
         //Variable que mantiene el estado visible del carrito
         var carritoVisible = false;
 

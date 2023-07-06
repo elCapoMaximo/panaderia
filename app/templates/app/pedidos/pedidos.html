@@ -14,15 +14,12 @@
                 <a href="{%url 'contacto'%}">Contacto</a>
 
                 {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'logout'%}">Cerrar Sesion</a>
-                </li>
-
+                <a href="{% url 'logout'%}">Cerrar Sesion</a>
+                <a class="btn-cerrar-login" href="#">@{{ user.username }}</a>
                 {% else %}
-                <li>
-                    <a href="{%url 'login'%}">Iniciar Sesion</a>
-                </li>
+                <a href="{%url 'login'%}">Iniciar Sesion</a>
                 {% endif %}
+
             </nav>
         </div>
     </header>

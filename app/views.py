@@ -4,8 +4,11 @@ from .forms import *
 from django.contrib import messages
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required, permission_required
-# Create your views here.
 
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from .models import Pan
+# Create your views here.
 
 def base (request):
     return render(request, 'app/base/base.html')
@@ -32,7 +35,6 @@ def carritocompra (request):
 def Registrarse (request):
     return render(request, 'app/Registrarse/registro.html')
 
-
 def innovacion (request):
     return render(request, 'app/innovacion/inno.html')
 
@@ -41,7 +43,6 @@ def pedidos (request):
 
 def personalizacion (request):
     return render(request, 'app/personalizacion/personalizacion.html')
-
 
 def seguimiento (request):
     return render
@@ -74,32 +75,70 @@ def listar_producto(request):
     }
     return render(request, 'app/crud/listar.html',data)
 
-@permission_required('app.change_pan')
+from django.http import HttpResponseRedirect
+
 def modificar_producto(request, id):
-        mproducto = get_object_or_404(Pan, codigo=id)
-        data = {
-                'form': PanForm(instance=mproducto)
-            }
+    mproducto = get_object_or_404(Pan, codigo=id)
+    data = {
+        'form': PanForm(instance=mproducto)
+    }
 
-        if request.method =='POST':
-            formulario = PanForm(data=request.POST, instance=mproducto, files =request.FILES)
-            if formulario.is_valid():
-                formulario.save()
-                messages.success(request,"Modificado Correctamente")
-                return redirect(to="listar_producto")
-            data['form'] = formulario
+    if request.method == 'POST':
+        formulario = PanForm(data=request.POST, instance=mproducto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado Correctamente")
+            if 'previous_url' in request.session:
+                previous_url = request.session['previous_url']
+                del request.session['previous_url']
+                return HttpResponseRedirect(previous_url)
+            else:
+                return redirect('listar_producto')
+        data['form'] = formulario
+    else:
+        request.session['previous_url'] = request.META.get('HTTP_REFERER')
 
+    return render(request, 'app/crud/modificar.html', data)
 
- 
-        return render(request, 'app/crud/modificar.html',data)
-
-@permission_required('app.delete_producto')
-def eliminar_producto(request,id):
+def eliminar_producto(request, id):
     eproducto = get_object_or_404(Pan, codigo=id)
+    url_anterior = request.META.get('HTTP_REFERER')
     eproducto.delete()
-    messages.success(request,"Eliminado Correctamente")
-    return redirect(to="listar_producto")
+    messages.success(request, "Eliminado Correctamente")
+    return redirect(url_anterior)
 
 def modelo_json(request):
     data = list(Pan.objects.values('nombre', 'precio', 'imagen'))
     return JsonResponse(data, safe=False)
+
+def buscar_producto(request):
+    query = request.GET.get('query')
+    
+    if query:
+        productos = Pan.objects.filter(nombre__iexact=query)
+    else:
+        productos = Pan.objects.all()
+        data ={
+            'pan':productos
+            }
+        
+    
+    return render(request, 'app/carritocompra/index.html', {'productos': productos, 'query': query})
+
+def buscar(request):
+    return render(request, 'app/buscar/buscar.html')
+
+
+def listar_buscar_producto(request):
+    query = request.GET.get('query')
+    
+    if query:
+        productos = Pan.objects.filter(nombre__iexact=query)
+    else:
+        productos = Pan.objects.all()
+        data ={
+            'pan':productos
+            }
+        
+    
+    return render(request, 'app/crud/listar.html', {'productos': productos, 'query': query})

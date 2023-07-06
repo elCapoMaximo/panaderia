@@ -1,0 +1,18 @@
+.card form input[type="text"], .card form textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    left: 0;
+    position: relative;
+    width: 415px;
+}
+
+button.btn-buscador-listar{
+    font-weight: 0;
+    padding: 0;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0;
+    color: black;
+    background-color: white;
+}

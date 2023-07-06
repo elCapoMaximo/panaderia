@@ -43,6 +43,7 @@
 
   .card form label[for=id_imagen] {
     position: relative;
+    left: -417px;
     top: 25px;
     background-color: #ffffff;
   }
@@ -52,6 +53,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    left: 90px;
+    position: relative;
+    width: 415px;
   }
   
   input#id_nombre {
@@ -83,6 +87,7 @@ textarea#id_descripcion {
 
 input#id_imagen {
   position: relative;
+  top: 0;
   left: 60px;
 }
 
@@ -138,8 +143,7 @@ input#id_imagen {
 
   a {
     position: relative;
-    top: 25px;
-    left: -60px;
+    left: 60px;
 }
 
 a.btn.btn-info {
